@@ -172,6 +172,31 @@
         "shared": false,
         "movable": false
       }
+    },
+    {
+      "title": "React Tile Navigation Widget",
+      "description": "A simple React widget displaying a tile-based navigation menu",
+      "version": "1.0.0",
+      "category": "Custom",
+      "type": "react_tile_nav",
+      "imageName": "react_tile_nav",
+      "content": {
+        "endpoint": "./widgets/react_tile_nav/content.html",
+        "method": "GET",
+        "requiresAuthentication": false,
+        "cacheStrategy": "no-cache"
+      },
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": false,
+        "movable": false
+      }
     }
   ]
 }
