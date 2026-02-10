@@ -96,8 +96,11 @@ const TileItem = (category: CommunityCategory) => {
 export function App() {
   const nav: MegaMenu = getNav();
   return (
-    nav.communityCategoriesV2.map(category => (
-      <TileItem key={category.id} {...category} />
-    ))
+    <>
+      <h1>Community Categories</h1>
+      {nav.communityCategoriesV2.map(category => (
+        <TileItem key={category.id} {...category} />
+      ))}
+    </>
   );
 }
