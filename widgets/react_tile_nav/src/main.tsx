@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 
 function renderWidget(container: HTMLElement) {
+    console.log("Rendering React Tile Navigation Widget...");
   if (container.hasAttribute("data-hello-world-initialized")) return;
   container.setAttribute("data-hello-world-initialized", "true");
 
