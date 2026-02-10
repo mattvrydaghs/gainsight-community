@@ -25,6 +25,7 @@ interface MegaMenu {
 function getNav(): MegaMenu {
   const currentMode = import.meta.env.MODE;
   if (currentMode === "development") {
+    console.log("⚠️ Running in development mode - using mock navigation data");
     return {
       communityCategoriesV2: [
         {
@@ -64,12 +65,17 @@ function getNav(): MegaMenu {
     };
   } else {
     // In production, fetch the actual navigation data from the server
+    console.log("🔍 Fetching navigation data from DOM");
     const element = document.querySelector("[data-preact='mega-menu/index']");
     if (element) {
+      console.log("✅ Mega menu element found - extracting navigation data");
       const dataPropsAttr = element.getAttribute("data-props");
       if (dataPropsAttr) {
+        console.log("✅ Navigation data found in data-props attribute - parsing JSON", JSON.parse(dataPropsAttr));
         return JSON.parse(dataPropsAttr);
       }
+    } else {
+      console.log("⚠️ Mega menu element not found in DOM - returning empty navigation");
     }
     return {
       communityCategoriesV2: [],
