@@ -4,8 +4,8 @@ import { App } from "./App";
 
 function renderWidget(container: HTMLElement) {
     console.log("Rendering React Tile Navigation Widget...");
-  if (container.hasAttribute("data-hello-world-initialized")) return;
-  container.setAttribute("data-hello-world-initialized", "true");
+  if (container.hasAttribute("react-nav-widget-initialized")) return;
+  container.setAttribute("react-nav-widget-initialized", "true");
 
   createRoot(container).render(
     <StrictMode>
@@ -14,12 +14,13 @@ function renderWidget(container: HTMLElement) {
   );
 }
 
-class HelloWorldWidgetElement extends HTMLElement {
+class ReactNavWidgetElement extends HTMLElement {
   connectedCallback() {
     renderWidget(this);
   }
 }
 
-if (!customElements.get("hello-world-widget")) {
-  customElements.define("hello-world-widget", HelloWorldWidgetElement);
+if (!customElements.get("react-nav-widget")) {
+  console.log("Defining custom element for React Tile Navigation Widget...");
+  customElements.define("react-nav-widget", ReactNavWidgetElement);
 }
