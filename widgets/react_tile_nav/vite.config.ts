@@ -21,7 +21,7 @@ function extractFragment() {
       const scriptMatch = html.match(/<script\b[^>]*>([\s\S]*?)<\/script(?:\s+[^>]*)?>/i);
       const scriptContent = scriptMatch ? scriptMatch[1] : "";
 
-      const fragment = `<style>${css}</style>\n<hello-world-widget></hello-world-widget>\n<script>${scriptContent}</script>`;
+      const fragment = `<style>${css}</style>\n<react-nav-widget></react-nav-widget>\n<script>${scriptContent}</script>`;
 
       writeFileSync(outputPath, fragment);
       console.log("✓ Built content.html");
