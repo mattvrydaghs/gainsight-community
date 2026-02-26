@@ -149,6 +149,31 @@
       }
     },
     {
+      "title": "Intuit Links",
+      "description": "Intuit Links widget for presentation purposes",
+      "version": "1.0",
+      "category": "Demo",
+      "type": "intuit_links",
+      "imageName": "html_widget",
+      "content": {
+        "endpoint": "./widgets/intuit_links/content.html",
+        "method": "GET",
+        "requiresAuthentication": false,
+        "cacheStrategy": "no-cache"
+      },
+      "containers": [
+        "Full width"
+      ],
+      "widgetsLibrary": true,
+      "settings": {
+        "configurable": false,
+        "editable": true,
+        "removable": true,
+        "shared": false,
+        "movable": false
+      }
+    },
+    {
       "title": "Hello World Widget",
       "description": "A simple React widget displaying Hello World with custom styling",
       "version": "1.0.0",

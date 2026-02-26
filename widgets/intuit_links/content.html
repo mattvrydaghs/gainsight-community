@@ -1,0 +1,35 @@
+<script src="link_list.js"></script>
+<script>
+
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const currentPage = parseInt(urlParams.get('page')) || 1;
+const linksPerPage = 1000;
+
+function displayLinks() {
+  const startIndex = (currentPage - 1) * linksPerPage;
+  const endIndex = startIndex + linksPerPage;
+  const paginatedLinks = linkList.slice(startIndex, endIndex);
+
+  const linksListElement = document.getElementById('links_list');
+  linksListElement.innerHTML = '';
+
+  paginatedLinks.forEach(link => {
+    const listItem = document.createElement('li');
+    const anchor = document.createElement('a');
+    anchor.href = link;
+    anchor.textContent = link;
+    anchor.target = '_blank';
+    listItem.appendChild(anchor);
+    linksListElement.appendChild(listItem);
+  });
+}
+
+displayLinks();
+
+</script>
+<div id="intuit_links" class="intuit_links">
+  <h2>Intuit Links</h2>
+  <ul id="links_list"></ul>
+</div>

@@ -1,0 +1,10 @@
+{
+    "version": "1.0",
+    "title": "Intuit Links",
+    "description": "Intuit Links widget for presentation purposes",
+    "category": "Demo",
+    "imageName": "html_widget",
+    "settings":{
+        "configurable": false
+    }
+}
