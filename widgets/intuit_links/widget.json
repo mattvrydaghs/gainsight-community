@@ -4,6 +4,7 @@
     "description": "Intuit Links widget for presentation purposes",
     "category": "Demo",
     "imageName": "html_widget",
+    "content": null,
     "settings":{
         "configurable": false
     },
