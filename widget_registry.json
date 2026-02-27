@@ -167,8 +167,8 @@
         "movable": false
       },
       "source": {
-        "path": "./widgets/intuit_links",
-        "entry": "content.html"
+        "path": "./widgets/intuit_links/dist",
+        "entry": "index.html"
       }
     },
     {
