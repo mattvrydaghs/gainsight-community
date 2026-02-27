@@ -58,5 +58,23 @@ window.addEventListener('popstate', (event) => {
   updatePage(page);
 });
 
-// Initial load
-updatePage(currentPage);
+
+// Wait for DOM ready
+document.addEventListener('DOMContentLoaded', () => {
+//   const urlParams = new URLSearchParams(window.location.search);
+  const hasPageParam = urlParams.has('page');
+//   const page = hasPageParam ? parseInt(urlParams.get('page')) || 1 : 1;
+  if (hasPageParam) {
+    updatePage(currentPage);
+  } else {
+    // Just load first page, don't add ?page param
+    loadLinkListPage(1)
+      .then(() => {
+        displayLinks(1, linksPerPage);
+        renderPagination(1);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+});
