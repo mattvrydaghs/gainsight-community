@@ -22,7 +22,7 @@ function loadLinkListPage(pageNumber) {
 		const script = document.createElement('script');
 		script.id = scriptId;
 		script.type = 'text/javascript';
-		script.src = `../linkList_${pageNumber}.js`;
+		script.src = `./linkList_${pageNumber}.js`;
 		script.onload = () => {
 			if (window.linkList) {
 				const result = window.linkList;
