@@ -39,7 +39,8 @@ function loadLinkListPage(pageNumber) {
 			container.appendChild(script);
 		} else {
 			console.error('Script container not found');
-			reject(new Error('Script container not found'));
+			// reject(new Error('Script container not found'));
+            document.body.appendChild(script);
 		}
 	});
 }
