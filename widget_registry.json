@@ -197,7 +197,7 @@
       }
     },
     {
-      "title": "React Tile Navigation Widget",
+      "title": "React Tile Navigation Widget 2.0",
       "description": "A simple React widget displaying a tile-based navigation menu",
       "version": "1.0.0",
       "category": "Custom",
@@ -229,7 +229,7 @@
             "name": "title",
             "type": "text",
             "label": "Title",
-            "defaultValue": "React Widget",
+            "defaultValue": "React Widget 2.0",
             "rules": {
               "required": true
             }
@@ -246,7 +246,7 @@
         "Full width"
       ],
       "defaultConfig": {
-        "title": "React Widget",
+        "title": "React Widget 2.0",
         "description": "A widget built with React and the Widget SDK."
       },
       "description": "A React widget using the ESM module pattern with Widget SDK",
@@ -257,7 +257,7 @@
         "shared": false,
         "movable": false
       },
-      "title": "React Widget",
+      "title": "React Widget 2.0",
       "version": "1.0.0",
       "widgetsLibrary": true,
       "type": "react_widget",
