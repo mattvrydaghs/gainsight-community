@@ -1,0 +1,15 @@
+{
+    "version": "1.0",
+    "title": "Dynamic Banner",
+    "description": "Banner that can do cool tricks",
+    "category": "Demo",
+    "imageName": "html_widget",
+    "content": null,
+    "settings":{
+        "configurable": true
+    },
+    "source":{
+        "path": "./widgets/dynamic_banner/dist",
+        "entry": "index.html"
+    }
+}

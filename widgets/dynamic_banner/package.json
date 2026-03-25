@@ -1,0 +1,17 @@
+{
+  "name": "dynamic_banner",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@gainsight-customer-hub/widget-service-sdk": "^1.3.4",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2"
+  }
+}
