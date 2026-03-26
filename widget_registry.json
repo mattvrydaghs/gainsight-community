@@ -1,18 +1,7 @@
 {
   "widgets": [
     {
-      "title": "Card Grid",
-      "description": "A configurable card grid widget demonstrating dynamic layout and styling options",
-      "version": "1.0.0",
       "category": "Demo",
-      "type": "card_grid",
-      "imageName": "banner",
-      "content": {
-        "endpoint": "./widgets/card_grid/content.html",
-        "method": "GET",
-        "requiresAuthentication": false,
-        "cacheStrategy": "no-cache"
-      },
       "configuration": {
         "properties": [
           {
@@ -102,6 +91,9 @@
           }
         ]
       },
+      "containers": [
+        "Full width"
+      ],
       "defaultConfig": {
         "cards_per_row": 3,
         "card_background": "#ffffff",
@@ -111,114 +103,137 @@
         "card_style": "shadow",
         "show_icons": "yes"
       },
-      "containers": [
-        "Full width"
-      ],
-      "widgetsLibrary": true,
+      "description": "A configurable card grid widget demonstrating dynamic layout and styling options",
+      "imageName": "banner",
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
         "shared": false,
         "movable": false
-      }
-    },
-    {
-      "title": "Demo widget",
-      "description": "Demo widget for presentation purposes",
-      "version": "1.0.0",
-      "category": "Demo",
-      "type": "demo_widget",
-      "imageName": "demo_widget",
-      "content": {
-        "endpoint": "./widgets/demo_widget/content.html",
-        "method": "GET",
-        "requiresAuthentication": false,
-        "cacheStrategy": "no-cache"
       },
+      "title": "Card Grid",
+      "version": "1.0.0",
+      "widgetsLibrary": true,
+      "type": "card_grid",
+      "source": {
+        "path": "widgets/card_grid",
+        "entry": "content.html"
+      }
+    },
+    {
+      "category": "Demo",
       "containers": [
         "Full width"
       ],
-      "widgetsLibrary": true,
+      "description": "Demo widget for presentation purposes",
+      "imageName": "demo_widget",
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
         "shared": false,
         "movable": false
+      },
+      "title": "Demo widget",
+      "version": "1.0.0",
+      "widgetsLibrary": true,
+      "type": "demo_widget",
+      "source": {
+        "path": "widgets/demo_widget",
+        "entry": "content.html"
       }
     },
     {
-      "title": "Intuit Links",
-      "description": "Intuit Links widget for presentation purposes",
-      "version": "1.0",
       "category": "Demo",
-      "type": "intuit_links",
-      "imageName": "html_widget",
       "containers": [
         "Full width"
       ],
+      "description": "Banner that can do cool tricks",
+      "imageName": "html_widget",
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "movable": false,
+        "removable": true,
+        "shared": false
+      },
+      "title": "Dynamic Banner",
+      "version": "1.0",
       "widgetsLibrary": true,
+      "type": "dynamic_banner",
+      "source": {
+        "path": "widgets/dynamic_banner",
+        "entry": "content.html"
+      }
+    },
+    {
+      "category": "Demo",
+      "containers": [
+        "Full width"
+      ],
+      "description": "Intuit Links widget for presentation purposes",
+      "imageName": "html_widget",
       "settings": {
         "configurable": false,
         "editable": true,
+        "movable": false,
         "removable": true,
-        "shared": false,
-        "movable": false
+        "shared": false
       },
+      "title": "Intuit Links",
+      "version": "1.0",
+      "widgetsLibrary": true,
+      "type": "intuit_links",
       "source": {
-        "path": "./widgets/intuit_links/dist",
+        "path": "widgets/intuit_links/dist",
         "entry": "index.html"
       }
     },
     {
-      "title": "Hello World Widget",
-      "description": "A simple React widget displaying Hello World with custom styling",
-      "version": "1.0.0",
       "category": "Demo",
-      "type": "react_hello_world",
-      "imageName": "react_hello_world",
-      "content": {
-        "endpoint": "./widgets/react_hello_world/content.html",
-        "method": "GET",
-        "requiresAuthentication": false,
-        "cacheStrategy": "no-cache"
-      },
       "containers": [
         "Full width"
       ],
-      "widgetsLibrary": true,
+      "description": "A simple React widget displaying Hello World with custom styling",
+      "imageName": "react_hello_world",
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
         "shared": false,
         "movable": false
+      },
+      "title": "Hello World Widget",
+      "version": "1.0.0",
+      "widgetsLibrary": true,
+      "type": "react_hello_world",
+      "source": {
+        "path": "widgets/react_hello_world",
+        "entry": "index.html"
       }
     },
     {
-      "title": "React Tile Navigation Widget 2.0",
-      "description": "A simple React widget displaying a tile-based navigation menu",
-      "version": "1.0.0",
       "category": "Custom",
-      "type": "react_tile_nav",
-      "imageName": "react_tile_nav",
-      "content": {
-        "endpoint": "./widgets/react_tile_nav/content.html",
-        "method": "GET",
-        "requiresAuthentication": false,
-        "cacheStrategy": "no-cache"
-      },
       "containers": [
         "Full width"
       ],
-      "widgetsLibrary": true,
+      "description": "A simple React widget displaying a tile-based navigation menu",
+      "imageName": "react_tile_nav",
       "settings": {
         "configurable": true,
         "editable": true,
         "removable": true,
         "shared": false,
         "movable": false
+      },
+      "title": "React Tile Navigation Widget",
+      "version": "1.0.0",
+      "widgetsLibrary": true,
+      "type": "react_tile_nav",
+      "source": {
+        "path": "widgets/react_tile_nav",
+        "entry": "content.html"
       }
     },
     {
@@ -226,16 +241,16 @@
       "configuration": {
         "properties": [
           {
-            "name": "title",
+            "name": "custom_title",
             "type": "text",
             "label": "Title",
-            "defaultValue": "React Widget 2.0",
+            "defaultValue": "React Widget",
             "rules": {
               "required": true
             }
           },
           {
-            "name": "description",
+            "name": "custom_description",
             "type": "text",
             "label": "Description",
             "defaultValue": "A widget built with React and the Widget SDK."
@@ -246,8 +261,8 @@
         "Full width"
       ],
       "defaultConfig": {
-        "title": "React Widget 2.0",
-        "description": "A widget built with React and the Widget SDK."
+        "custom_title": "React Widget",
+        "custom_description": "A widget built with React and the Widget SDK."
       },
       "description": "A React widget using the ESM module pattern with Widget SDK",
       "settings": {
@@ -257,7 +272,7 @@
         "shared": false,
         "movable": false
       },
-      "title": "React Widget 2.0",
+      "title": "React Widget",
       "version": "1.0.0",
       "widgetsLibrary": true,
       "type": "react_widget",

@@ -3,6 +3,10 @@
     "title": "React Tile Navigation Widget",
     "description": "A simple React widget displaying a tile-based navigation menu",
     "category": "Custom",
-    "imageName": "react_tile_nav"
+    "imageName": "react_tile_nav",
+    "source": {
+      "path": "",
+      "entry": "content.html"
+    }
   }
   

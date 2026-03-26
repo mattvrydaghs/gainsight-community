@@ -4,6 +4,10 @@
   "description": "A configurable card grid widget demonstrating dynamic layout and styling options",
   "category": "Demo",
   "imageName": "banner",
+  "source": {
+    "path": "",
+    "entry": "content.html"
+  },
   "configuration": {
     "properties": [
       {

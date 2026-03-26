@@ -11,7 +11,7 @@
   "configuration": {
     "properties": [
       {
-        "name": "title",
+        "name": "custom_title",
         "type": "text",
         "label": "Title",
         "defaultValue": "React Widget",
@@ -20,7 +20,7 @@
         }
       },
       {
-        "name": "description",
+        "name": "custom_description",
         "type": "text",
         "label": "Description",
         "defaultValue": "A widget built with React and the Widget SDK."
@@ -28,7 +28,7 @@
     ]
   },
   "defaultConfig": {
-    "title": "React Widget",
-    "description": "A widget built with React and the Widget SDK."
+    "custom_title": "React Widget",
+    "custom_description": "A widget built with React and the Widget SDK."
   }
 }

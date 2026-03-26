@@ -9,7 +9,7 @@
         "configurable": false
     },
     "source":{
-        "path": "./widgets/intuit_links/dist",
+        "path": "dist",
         "entry": "index.html"
     }
 }

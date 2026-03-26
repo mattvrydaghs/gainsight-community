@@ -9,7 +9,7 @@
         "configurable": true
     },
     "source":{
-        "path": "./widgets/dynamic_banner/dist",
-        "entry": "index.html"
+        "path": "",
+        "entry": "content.html"
     }
 }

@@ -3,5 +3,9 @@
   "title": "Hello World Widget",
   "description": "A simple React widget displaying Hello World with custom styling",
   "category": "Demo",
-  "imageName": "react_hello_world"
+  "imageName": "react_hello_world",
+  "source": {
+    "path": "",
+    "entry": "index.html"
+  }
 }
