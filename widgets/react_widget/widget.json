@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "title": "React Widget 2.0",
+  "title": "React Widget",
   "description": "A React widget using the ESM module pattern with Widget SDK",
   "category": "Demo",
   "imageSrc": "thumbnail.png",
@@ -28,7 +28,7 @@
     ]
   },
   "defaultConfig": {
-    "title": "React Widget 2.0",
+    "title": "React Widget",
     "description": "A widget built with React and the Widget SDK."
   }
 }
