@@ -9,8 +9,12 @@ export function App({ sdk }: { sdk: WidgetSDK }) {
   return (
     <section className="react-widget-section">
       <h3 className="react-widget-title">{props.title}</h3>
-      {props.description && (
-        <p className="react-widget-description">{props.description}</p>
+      <h3 className="react-widget-title">{props.custom_title}</h3>
+      {props.subtitle && (
+        <h4 className="react-widget-subtitle">{props.subtitle}</h4>
+      )}
+      {props.custom_description && (
+        <p className="react-widget-description">{props.custom_description}</p>
       )}
     </section>
   );

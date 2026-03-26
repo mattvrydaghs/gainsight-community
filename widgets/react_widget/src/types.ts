@@ -1,6 +1,8 @@
 export interface WidgetProps {
   title?: string;
-  description?: string;
+  subtitle?: string;
+  custom_title?: string;
+  custom_description?: string;
   [key: string]: unknown;
 }
 
