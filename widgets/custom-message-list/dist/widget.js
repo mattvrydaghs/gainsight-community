@@ -1,6 +1,6 @@
 var w1 = Object.defineProperty;
-var W1 = (O, g, r) => g in O ? w1(O, g, { enumerable: !0, configurable: !0, writable: !0, value: r }) : O[g] = r;
-var Xu = (O, g, r) => W1(O, typeof g != "symbol" ? g + "" : g, r);
+var W1 = (r, g, O) => g in r ? w1(r, g, { enumerable: !0, configurable: !0, writable: !0, value: O }) : r[g] = O;
+var Xu = (r, g, O) => W1(r, typeof g != "symbol" ? g + "" : g, O);
 var ni = { exports: {} }, be = {};
 /**
  * @license React
@@ -15,8 +15,8 @@ var hs;
 function $1() {
   if (hs) return be;
   hs = 1;
-  var O = Symbol.for("react.transitional.element"), g = Symbol.for("react.fragment");
-  function r(m, fl, cl) {
+  var r = Symbol.for("react.transitional.element"), g = Symbol.for("react.fragment");
+  function O(m, fl, cl) {
     var dl = null;
     if (cl !== void 0 && (dl = "" + cl), fl.key !== void 0 && (dl = "" + fl.key), "key" in fl) {
       cl = {};
@@ -24,14 +24,14 @@ function $1() {
         Al !== "key" && (cl[Al] = fl[Al]);
     } else cl = fl;
     return fl = cl.ref, {
-      $$typeof: O,
+      $$typeof: r,
       type: m,
       key: dl,
       ref: fl !== void 0 ? fl : null,
       props: cl
     };
   }
-  return be.Fragment = g, be.jsx = r, be.jsxs = r, be;
+  return be.Fragment = g, be.jsx = O, be.jsxs = O, be;
 }
 var os;
 function F1() {
@@ -49,7 +49,7 @@ var Te = F1(), fi = { exports: {} }, ze = {}, ci = { exports: {} }, ii = {};
  */
 var ms;
 function k1() {
-  return ms || (ms = 1, (function(O) {
+  return ms || (ms = 1, (function(r) {
     function g(z, M) {
       var B = z.length;
       z.push(M);
@@ -60,7 +60,7 @@ function k1() {
         else break l;
       }
     }
-    function r(z) {
+    function O(z) {
       return z.length === 0 ? null : z[0];
     }
     function m(z) {
@@ -83,43 +83,43 @@ function k1() {
       var B = z.sortIndex - M.sortIndex;
       return B !== 0 ? B : z.id - M.id;
     }
-    if (O.unstable_now = void 0, typeof performance == "object" && typeof performance.now == "function") {
+    if (r.unstable_now = void 0, typeof performance == "object" && typeof performance.now == "function") {
       var cl = performance;
-      O.unstable_now = function() {
+      r.unstable_now = function() {
         return cl.now();
       };
     } else {
       var dl = Date, Al = dl.now();
-      O.unstable_now = function() {
+      r.unstable_now = function() {
         return dl.now() - Al;
       };
     }
     var q = [], _ = [], F = 1, Y = null, vl = 3, wl = !1, pl = !1, Cl = !1, Dt = !1, Wl = typeof setTimeout == "function" ? setTimeout : null, wt = typeof clearTimeout == "function" ? clearTimeout : null, ql = typeof setImmediate < "u" ? setImmediate : null;
     function nt(z) {
-      for (var M = r(_); M !== null; ) {
+      for (var M = O(_); M !== null; ) {
         if (M.callback === null) m(_);
         else if (M.startTime <= z)
           m(_), M.sortIndex = M.expirationTime, g(q, M);
         else break;
-        M = r(_);
+        M = O(_);
       }
     }
     function Tt(z) {
       if (Cl = !1, nt(z), !pl)
-        if (r(q) !== null)
+        if (O(q) !== null)
           pl = !0, Gl || (Gl = !0, Xl());
         else {
-          var M = r(_);
+          var M = O(_);
           M !== null && gt(Tt, M.startTime - z);
         }
     }
     var Gl = !1, K = -1, Ql = 5, Et = -1;
     function ju() {
-      return Dt ? !0 : !(O.unstable_now() - Et < Ql);
+      return Dt ? !0 : !(r.unstable_now() - Et < Ql);
     }
     function At() {
       if (Dt = !1, Gl) {
-        var z = O.unstable_now();
+        var z = r.unstable_now();
         Et = z;
         var M = !0;
         try {
@@ -128,24 +128,24 @@ function k1() {
             var B = vl;
             try {
               t: {
-                for (nt(z), Y = r(q); Y !== null && !(Y.expirationTime > z && ju()); ) {
+                for (nt(z), Y = O(q); Y !== null && !(Y.expirationTime > z && ju()); ) {
                   var ll = Y.callback;
                   if (typeof ll == "function") {
                     Y.callback = null, vl = Y.priorityLevel;
                     var el = ll(
                       Y.expirationTime <= z
                     );
-                    if (z = O.unstable_now(), typeof el == "function") {
+                    if (z = r.unstable_now(), typeof el == "function") {
                       Y.callback = el, nt(z), M = !0;
                       break t;
                     }
-                    Y === r(q) && m(q), nt(z);
+                    Y === O(q) && m(q), nt(z);
                   } else m(q);
-                  Y = r(q);
+                  Y = O(q);
                 }
                 if (Y !== null) M = !0;
                 else {
-                  var v = r(_);
+                  var v = O(_);
                   v !== null && gt(
                     Tt,
                     v.startTime - z
@@ -179,18 +179,18 @@ function k1() {
       };
     function gt(z, M) {
       K = Wl(function() {
-        z(O.unstable_now());
+        z(r.unstable_now());
       }, M);
     }
-    O.unstable_IdlePriority = 5, O.unstable_ImmediatePriority = 1, O.unstable_LowPriority = 4, O.unstable_NormalPriority = 3, O.unstable_Profiling = null, O.unstable_UserBlockingPriority = 2, O.unstable_cancelCallback = function(z) {
+    r.unstable_IdlePriority = 5, r.unstable_ImmediatePriority = 1, r.unstable_LowPriority = 4, r.unstable_NormalPriority = 3, r.unstable_Profiling = null, r.unstable_UserBlockingPriority = 2, r.unstable_cancelCallback = function(z) {
       z.callback = null;
-    }, O.unstable_forceFrameRate = function(z) {
+    }, r.unstable_forceFrameRate = function(z) {
       0 > z || 125 < z ? console.error(
         "forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported"
       ) : Ql = 0 < z ? Math.floor(1e3 / z) : 5;
-    }, O.unstable_getCurrentPriorityLevel = function() {
+    }, r.unstable_getCurrentPriorityLevel = function() {
       return vl;
-    }, O.unstable_next = function(z) {
+    }, r.unstable_next = function(z) {
       switch (vl) {
         case 1:
         case 2:
@@ -207,9 +207,9 @@ function k1() {
       } finally {
         vl = B;
       }
-    }, O.unstable_requestPaint = function() {
+    }, r.unstable_requestPaint = function() {
       Dt = !0;
-    }, O.unstable_runWithPriority = function(z, M) {
+    }, r.unstable_runWithPriority = function(z, M) {
       switch (z) {
         case 1:
         case 2:
@@ -227,8 +227,8 @@ function k1() {
       } finally {
         vl = B;
       }
-    }, O.unstable_scheduleCallback = function(z, M, B) {
-      var ll = O.unstable_now();
+    }, r.unstable_scheduleCallback = function(z, M, B) {
+      var ll = r.unstable_now();
       switch (typeof B == "object" && B !== null ? (B = B.delay, B = typeof B == "number" && 0 < B ? ll + B : ll) : B = ll, z) {
         case 1:
           var el = -1;
@@ -252,8 +252,8 @@ function k1() {
         startTime: B,
         expirationTime: el,
         sortIndex: -1
-      }, B > ll ? (z.sortIndex = B, g(_, z), r(q) === null && z === r(_) && (Cl ? (wt(K), K = -1) : Cl = !0, gt(Tt, B - ll))) : (z.sortIndex = el, g(q, z), pl || wl || (pl = !0, Gl || (Gl = !0, Xl()))), z;
-    }, O.unstable_shouldYield = ju, O.unstable_wrapCallback = function(z) {
+      }, B > ll ? (z.sortIndex = B, g(_, z), O(q) === null && z === O(_) && (Cl ? (wt(K), K = -1) : Cl = !0, gt(Tt, B - ll))) : (z.sortIndex = el, g(q, z), pl || wl || (pl = !0, Gl || (Gl = !0, Xl()))), z;
+    }, r.unstable_shouldYield = ju, r.unstable_wrapCallback = function(z) {
       var M = vl;
       return function() {
         var B = vl;
@@ -285,7 +285,7 @@ var Ss;
 function P1() {
   if (Ss) return p;
   Ss = 1;
-  var O = Symbol.for("react.transitional.element"), g = Symbol.for("react.portal"), r = Symbol.for("react.fragment"), m = Symbol.for("react.strict_mode"), fl = Symbol.for("react.profiler"), cl = Symbol.for("react.consumer"), dl = Symbol.for("react.context"), Al = Symbol.for("react.forward_ref"), q = Symbol.for("react.suspense"), _ = Symbol.for("react.memo"), F = Symbol.for("react.lazy"), Y = Symbol.for("react.activity"), vl = Symbol.iterator;
+  var r = Symbol.for("react.transitional.element"), g = Symbol.for("react.portal"), O = Symbol.for("react.fragment"), m = Symbol.for("react.strict_mode"), fl = Symbol.for("react.profiler"), cl = Symbol.for("react.consumer"), dl = Symbol.for("react.context"), Al = Symbol.for("react.forward_ref"), q = Symbol.for("react.suspense"), _ = Symbol.for("react.memo"), F = Symbol.for("react.lazy"), Y = Symbol.for("react.activity"), vl = Symbol.iterator;
   function wl(v) {
     return v === null || typeof v != "object" ? null : (v = vl && v[vl] || v["@@iterator"], typeof v == "function" ? v : null);
   }
@@ -327,7 +327,7 @@ function P1() {
   function Et(v, A, D) {
     var H = D.ref;
     return {
-      $$typeof: O,
+      $$typeof: r,
       type: v,
       key: A,
       ref: H !== void 0 ? H : null,
@@ -338,7 +338,7 @@ function P1() {
     return Et(v.type, A, v.props);
   }
   function At(v) {
-    return typeof v == "object" && v !== null && v.$$typeof === O;
+    return typeof v == "object" && v !== null && v.$$typeof === r;
   }
   function Xl(v) {
     var A = { "=": "=0", ":": "=2" };
@@ -387,7 +387,7 @@ function P1() {
           break;
         case "object":
           switch (v.$$typeof) {
-            case O:
+            case r:
             case g:
               k = !0;
               break;
@@ -512,7 +512,7 @@ function P1() {
       return v;
     }
   };
-  return p.Activity = Y, p.Children = el, p.Component = Wl, p.Fragment = r, p.Profiler = fl, p.PureComponent = ql, p.StrictMode = m, p.Suspense = q, p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = K, p.__COMPILER_RUNTIME = {
+  return p.Activity = Y, p.Children = el, p.Component = Wl, p.Fragment = O, p.Profiler = fl, p.PureComponent = ql, p.StrictMode = m, p.Suspense = q, p.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = K, p.__COMPILER_RUNTIME = {
     __proto__: null,
     c: function(v) {
       return K.H.useMemoCache(v);
@@ -658,7 +658,7 @@ var zs;
 function lh() {
   if (zs) return Rl;
   zs = 1;
-  var O = si();
+  var r = si();
   function g(q) {
     var _ = "https://react.dev/errors/" + q;
     if (1 < arguments.length) {
@@ -668,21 +668,21 @@ function lh() {
     }
     return "Minified React error #" + q + "; visit " + _ + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
   }
-  function r() {
+  function O() {
   }
   var m = {
     d: {
-      f: r,
+      f: O,
       r: function() {
         throw Error(g(522));
       },
-      D: r,
-      C: r,
-      L: r,
-      m: r,
-      X: r,
-      S: r,
-      M: r
+      D: O,
+      C: O,
+      L: O,
+      m: O,
+      X: O,
+      S: O,
+      M: O
     },
     p: 0,
     findDOMNode: null
@@ -697,7 +697,7 @@ function lh() {
       implementation: F
     };
   }
-  var dl = O.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+  var dl = r.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
   function Al(q, _) {
     if (q === "font") return "";
     if (typeof _ == "string")
@@ -791,15 +791,15 @@ var Ts;
 function th() {
   if (Ts) return vi.exports;
   Ts = 1;
-  function O() {
+  function r() {
     if (!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ > "u" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE != "function"))
       try {
-        __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(O);
+        __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(r);
       } catch (g) {
         console.error(g);
       }
   }
-  return O(), vi.exports = lh(), vi.exports;
+  return r(), vi.exports = lh(), vi.exports;
 }
 /**
  * @license React
@@ -814,7 +814,7 @@ var Es;
 function uh() {
   if (Es) return ze;
   Es = 1;
-  var O = I1(), g = si(), r = th();
+  var r = I1(), g = si(), O = th();
   function m(l) {
     var t = "https://react.dev/errors/" + l;
     if (1 < arguments.length) {
@@ -969,7 +969,7 @@ function uh() {
       }
     return null;
   }
-  var gt = Array.isArray, z = g.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, M = r.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = {
+  var gt = Array.isArray, z = g.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, M = O.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, B = {
     pending: !1,
     data: null,
     method: null,
@@ -1161,7 +1161,7 @@ Error generating stack: ` + a.message + `
 ` + a.stack;
     }
   }
-  var Vn = Object.prototype.hasOwnProperty, Ln = O.unstable_scheduleCallback, Kn = O.unstable_cancelCallback, Ms = O.unstable_shouldYield, rs = O.unstable_requestPaint, $l = O.unstable_now, Ds = O.unstable_getCurrentPriorityLevel, oi = O.unstable_ImmediatePriority, mi = O.unstable_UserBlockingPriority, Ae = O.unstable_NormalPriority, Us = O.unstable_LowPriority, gi = O.unstable_IdlePriority, Hs = O.log, Ns = O.unstable_setDisableYieldValue, ra = null, Fl = null;
+  var Vn = Object.prototype.hasOwnProperty, Ln = r.unstable_scheduleCallback, Kn = r.unstable_cancelCallback, Ms = r.unstable_shouldYield, rs = r.unstable_requestPaint, $l = r.unstable_now, Ds = r.unstable_getCurrentPriorityLevel, oi = r.unstable_ImmediatePriority, mi = r.unstable_UserBlockingPriority, Ae = r.unstable_NormalPriority, Us = r.unstable_LowPriority, gi = r.unstable_IdlePriority, Hs = r.log, Ns = r.unstable_setDisableYieldValue, ra = null, Fl = null;
   function Wt(l) {
     if (typeof Hs == "function" && Ns(l), Fl && typeof Fl.setStrictMode == "function")
       try {
@@ -2730,7 +2730,7 @@ Error generating stack: ` + a.message + `
         return u();
       });
     };
-  }, Rd = O.unstable_scheduleCallback, Cd = O.unstable_NormalPriority, bl = {
+  }, Rd = r.unstable_scheduleCallback, Cd = r.unstable_NormalPriority, bl = {
     $$typeof: ql,
     Consumer: null,
     Provider: null,
@@ -10395,15 +10395,15 @@ Error generating stack: ` + a.message + `
     ai = !1, ou !== null && Bn(ou) && (ou = null), mu !== null && Bn(mu) && (mu = null), gu !== null && Bn(gu) && (gu = null), me.forEach(ys), ge.forEach(ys);
   }
   function pn(l, t) {
-    l.blockedOn === t && (l.blockedOn = null, ai || (ai = !0, O.unstable_scheduleCallback(
-      O.unstable_NormalPriority,
+    l.blockedOn === t && (l.blockedOn = null, ai || (ai = !0, r.unstable_scheduleCallback(
+      r.unstable_NormalPriority,
       L1
     )));
   }
   var Gn = null;
   function vs(l) {
-    Gn !== l && (Gn = l, O.unstable_scheduleCallback(
-      O.unstable_NormalPriority,
+    Gn !== l && (Gn = l, r.unstable_scheduleCallback(
+      r.unstable_NormalPriority,
       function() {
         Gn === l && (Gn = null);
         for (var t = 0; t < l.length; t += 3) {
@@ -10587,15 +10587,15 @@ var As;
 function ah() {
   if (As) return fi.exports;
   As = 1;
-  function O() {
+  function r() {
     if (!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ > "u" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE != "function"))
       try {
-        __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(O);
+        __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(r);
       } catch (g) {
         console.error(g);
       }
   }
-  return O(), fi.exports = uh(), fi.exports;
+  return r(), fi.exports = uh(), fi.exports;
 }
 var eh = ah(), _s = si();
 class nh {
@@ -10618,14 +10618,14 @@ class nh {
       grant_type: "client_credentials",
       client_id: this.clientId,
       client_secret: this.clientSecret
-    }), r = await fetch(`${this.baseUrl}/oauth2/token`, {
+    }), O = await fetch(`${this.baseUrl}/oauth2/token`, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: g.toString()
     });
-    if (!r.ok)
-      throw new Error(`Authentication failed: ${r.status} ${r.statusText}`);
-    const m = await r.json();
+    if (!O.ok)
+      throw new Error(`Authentication failed: ${O.status} ${O.statusText}`);
+    const m = await O.json();
     return this.accessToken = m.access_token, this.tokenExpiresAt = Date.now() + m.expires_in * 1e3 - 6e4, m;
   }
   /** Returns a valid bearer token, re-authenticating if expired. */
@@ -10633,18 +10633,18 @@ class nh {
     return (!this.accessToken || Date.now() >= this.tokenExpiresAt) && await this.authenticate(), this.accessToken;
   }
   // ─── Core Request Helper ────────────────────────────────────────────────────
-  async request(g, r = {}, m) {
+  async request(g, O = {}, m) {
     const fl = await this.getToken(), cl = new URL(`${this.baseUrl}${g}`);
     if (m)
       for (const [Al, q] of Object.entries(m))
         q !== void 0 && cl.searchParams.set(Al, String(q));
     this.moderatorId && cl.searchParams.set("moderatorId", this.moderatorId);
     const dl = await fetch(cl.toString(), {
-      ...r,
+      ...O,
       headers: {
         Authorization: `Bearer ${fl}`,
         "Content-Type": "application/json",
-        ...r.headers ?? {}
+        ...O.headers ?? {}
       }
     });
     if (!dl.ok) {
@@ -10678,10 +10678,10 @@ class nh {
    * Get replies for a conversation.
    * GET /v2/conversations/{id}/replies
    */
-  async getConversationReplies(g, r) {
+  async getConversationReplies(g, O) {
     return this.request(`/v2/conversations/${g}/replies`, {}, {
-      page: r == null ? void 0 : r.page,
-      pageSize: r == null ? void 0 : r.pageSize
+      page: O == null ? void 0 : O.page,
+      pageSize: O == null ? void 0 : O.pageSize
     });
   }
   // ─── Articles ───────────────────────────────────────────────────────────────
@@ -10709,10 +10709,10 @@ class nh {
    * Get replies for an article.
    * GET /v2/articles/{id}/replies
    */
-  async getArticleReplies(g, r) {
+  async getArticleReplies(g, O) {
     return this.request(`/v2/articles/${g}/replies`, {}, {
-      page: r == null ? void 0 : r.page,
-      pageSize: r == null ? void 0 : r.pageSize
+      page: O == null ? void 0 : O.page,
+      pageSize: O == null ? void 0 : O.pageSize
     });
   }
   // ─── Questions ──────────────────────────────────────────────────────────────
@@ -10740,10 +10740,10 @@ class nh {
    * Get replies for a question.
    * GET /v2/questions/{id}/replies
    */
-  async getQuestionReplies(g, r) {
+  async getQuestionReplies(g, O) {
     return this.request(`/v2/questions/${g}/replies`, {}, {
-      page: r == null ? void 0 : r.page,
-      pageSize: r == null ? void 0 : r.pageSize
+      page: O == null ? void 0 : O.page,
+      pageSize: O == null ? void 0 : O.pageSize
     });
   }
   // ─── Ideas ──────────────────────────────────────────────────────────────────
@@ -10771,10 +10771,10 @@ class nh {
    * Get replies for an idea.
    * GET /v2/ideas/{id}/replies
    */
-  async getIdeaReplies(g, r) {
+  async getIdeaReplies(g, O) {
     return this.request(`/v2/ideas/${g}/replies`, {}, {
-      page: r == null ? void 0 : r.page,
-      pageSize: r == null ? void 0 : r.pageSize
+      page: O == null ? void 0 : O.page,
+      pageSize: O == null ? void 0 : O.pageSize
     });
   }
   // ─── Users ──────────────────────────────────────────────────────────────────
@@ -10837,12 +10837,12 @@ class nh {
    *   user.Created, user.Updated, user.Deleted
    *   group.Created, group.Updated, group.Deleted
    */
-  async subscribeToWebhook(g, r) {
+  async subscribeToWebhook(g, O) {
     return this.request(
       `/webhooks/${encodeURIComponent(g)}/subscriptions`,
       {
         method: "POST",
-        body: JSON.stringify(r)
+        body: JSON.stringify(O)
       }
     );
   }
@@ -10859,9 +10859,9 @@ class nh {
    * Delete a webhook subscription.
    * DELETE /webhooks/{eventName}/subscriptions/{subscriptionId}
    */
-  async deleteWebhookSubscription(g, r) {
+  async deleteWebhookSubscription(g, O) {
     await this.request(
-      `/webhooks/${encodeURIComponent(g)}/subscriptions/${r}`,
+      `/webhooks/${encodeURIComponent(g)}/subscriptions/${O}`,
       { method: "DELETE" }
     );
   }
@@ -10878,16 +10878,16 @@ class nh {
     this.accessToken = null, this.tokenExpiresAt = 0;
   }
 }
-function fh({ sdk: O }) {
-  const [g, r] = _s.useState(O.getProps());
+function fh({ sdk: r }) {
+  const [g, O] = _s.useState(r.getProps());
   new nh({
     baseUrl: "https://api2-us-west-2.insided.com/",
     clientId: "ce9f904c-02bf-41a4-8706-19c24b9752d8",
     clientSecret: "61e3aed3d08d50709faa9e11da4856a8ac6d33b41d2a65af16c90c93d4b11f55"
-  }), _s.useEffect(() => O.on("propsChanged", r), [O]);
+  }), _s.useEffect(() => r.on("propsChanged", O), [r]);
   const m = () => {
     const fl = prompt("Enter new title:", g.title), cl = prompt("Enter new description:", g.description);
-    O.emit("updateProps", { title: fl, description: cl });
+    O({ title: fl, description: cl });
   };
   return /* @__PURE__ */ Te.jsxs("section", { className: "react-widget-section", children: [
     /* @__PURE__ */ Te.jsx("h3", { className: "react-widget-title", children: g.title }),
@@ -10895,10 +10895,10 @@ function fh({ sdk: O }) {
     /* @__PURE__ */ Te.jsx("button", { onClick: m, children: "Update Props" })
   ] });
 }
-async function ih(O) {
-  await O.whenReady();
-  const g = eh.createRoot(O.getContainer());
-  g.render(/* @__PURE__ */ Te.jsx(fh, { sdk: O })), O.on("destroy", () => g.unmount());
+async function ih(r) {
+  await r.whenReady();
+  const g = eh.createRoot(r.getContainer());
+  g.render(/* @__PURE__ */ Te.jsx(fh, { sdk: r })), r.on("destroy", () => g.unmount());
 }
 export {
   ih as init

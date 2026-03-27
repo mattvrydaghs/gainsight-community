@@ -16,7 +16,8 @@ export function App({ sdk }: { sdk: WidgetSDK }) {
   const updateProps = () => {
     const newTitle = prompt("Enter new title:", props.title as string);
     const newDescription = prompt("Enter new description:", props.description as string);
-    sdk.emit("updateProps", { title: newTitle, description: newDescription });
+    setProps({title: newTitle as string, description: newDescription as string}); // Update local state immediately for better UX
+    // sdk.emit("updateProps", { title: newTitle, description: newDescription });
   };
 
   return (
