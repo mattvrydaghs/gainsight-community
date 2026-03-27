@@ -281,6 +281,51 @@
         "entry": "index.html"
       },
       "imageSrc": "widgets/react_widget/thumbnail.png"
+    },
+    {
+      "type": "custom-message-list",
+      "title": "Custom Message List",
+      "version": "1.0.0",
+      "category": "Custom",
+      "imageSrc": "widgets/custom-message-list/thumbnail.png",
+      "widgetsLibrary": true,
+      "containers": [
+        "Full width"
+      ],
+      "settings": {
+        "configurable": true,
+        "editable": true,
+        "removable": true,
+        "shared": false,
+        "movable": false
+      },
+      "source": {
+        "path": "widgets/custom-message-list/dist",
+        "entry": "index.html"
+      },
+      "configuration": {
+        "properties": [
+          {
+            "name": "title",
+            "type": "text",
+            "label": "Title",
+            "defaultValue": "Custom Message List",
+            "rules": {
+              "required": true
+            }
+          },
+          {
+            "name": "description",
+            "type": "text",
+            "label": "Description",
+            "defaultValue": "A widget built with React and the Widget SDK."
+          }
+        ]
+      },
+      "defaultConfig": {
+        "title": "Custom Message List",
+        "description": "A widget built with React and the Widget SDK."
+      }
     }
   ]
 }
