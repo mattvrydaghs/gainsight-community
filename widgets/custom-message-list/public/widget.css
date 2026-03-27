@@ -1,3 +1,5 @@
+/* ─── Widget shell ─────────────────────────────────────────────────────────── */
+
 .react-widget-section {
   padding: 2rem;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -22,4 +24,296 @@
   font-size: 1rem;
   opacity: 0.85;
   line-height: 1.6;
+}
+
+/* ─── MessageList root ─────────────────────────────────────────────────────── */
+
+.ml-root {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  color: #111827;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────────── */
+
+.ml-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ml-header__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6b7280;
+}
+
+.ml-header__count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #f97316;
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+  line-height: 1.4;
+}
+
+/* ─── Conversation list ────────────────────────────────────────────────────── */
+
+.ml-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Conversation card ────────────────────────────────────────────────────── */
+
+.ml-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s ease;
+  cursor: default;
+}
+
+.ml-card:last-child {
+  border-bottom: none;
+}
+
+.ml-card:hover {
+  background: #fafafa;
+}
+
+/* Avatar */
+.ml-card__avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ml-card__avatar--initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+/* Body */
+.ml-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ml-card__title {
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ml-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.ml-card__author {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.ml-card__dot {
+  color: #d1d5db;
+}
+
+.ml-card__time {
+  color: #9ca3af;
+}
+
+.ml-card__tag {
+  display: inline-flex;
+  align-items: center;
+  background: #f3f4f6;
+  color: #4b5563;
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Stats (right side) */
+.ml-card__stats {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.ml-card__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+/* ─── Skeleton loading ─────────────────────────────────────────────────────── */
+
+@keyframes ml-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.ml-skeleton {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 800px 100%;
+  animation: ml-shimmer 1.4s infinite linear;
+  border-radius: 4px;
+}
+
+.ml-card--skeleton .ml-card__avatar {
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 800px 100%;
+  animation: ml-shimmer 1.4s infinite linear;
+}
+
+.ml-skeleton--title {
+  height: 0.85rem;
+  width: 72%;
+  margin-bottom: 0.375rem;
+}
+
+.ml-skeleton--meta {
+  height: 0.65rem;
+  width: 44%;
+}
+
+/* ─── Error state ──────────────────────────────────────────────────────────── */
+
+.ml-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 0.75rem 1.25rem;
+  padding: 0.625rem 0.875rem;
+  background: #fff1f0;
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+/* ─── Empty state ──────────────────────────────────────────────────────────── */
+
+.ml-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2.5rem 1.25rem;
+  color: #d1d5db;
+  text-align: center;
+}
+
+.ml-empty p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* ─── Footer / Load more ───────────────────────────────────────────────────── */
+
+.ml-footer {
+  display: flex;
+  justify-content: center;
+  padding: 0.875rem 1.25rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+/* ─── Buttons ──────────────────────────────────────────────────────────────── */
+
+.ml-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  padding: 0.4rem 1rem;
+  line-height: 1.5;
+}
+
+.ml-btn--primary {
+  background: #f97316;
+  color: #ffffff;
+  min-width: 6rem;
+}
+
+.ml-btn--primary:hover:not(:disabled) {
+  background: #ea6c0a;
+}
+
+.ml-btn--primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.ml-btn--ghost {
+  background: transparent;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}
+
+.ml-btn--ghost:hover {
+  background: #fff1f0;
+}
+
+/* ─── Spinner ──────────────────────────────────────────────────────────────── */
+
+@keyframes ml-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ml-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ml-spin 0.65s linear infinite;
 }
