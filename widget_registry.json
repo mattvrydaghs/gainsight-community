@@ -341,7 +341,7 @@
       ],
       "name": "theme",
       "description": "Shared design tokens and component styles",
-      "path": "./stylesheets/theme/style.css"
+      "path": "./stylesheets/global/style.css"
     }
   ],
   "scripts": [
