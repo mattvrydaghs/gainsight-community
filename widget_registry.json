@@ -327,5 +327,38 @@
         "description": "A widget built with React and the Widget SDK."
       }
     }
+  ],
+  "stylesheets": [
+    {
+      "rules": [
+        {
+          "field": "pageType",
+          "operator": "in",
+          "value": [
+            "global"
+          ]
+        }
+      ],
+      "name": "theme",
+      "description": "Shared design tokens and component styles",
+      "path": "./stylesheets/theme/style.css"
+    }
+  ],
+  "scripts": [
+    {
+      "rules": [
+        {
+          "field": "pageType",
+          "operator": "in",
+          "value": [
+            "global"
+          ]
+        }
+      ],
+      "placement": "head",
+      "name": "global-script",
+      "description": "Global JavaScript for shared functionality across all pages",
+      "path": "./scripts/global/script.js"
+    }
   ]
 }
